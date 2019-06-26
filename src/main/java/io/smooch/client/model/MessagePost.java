@@ -349,8 +349,8 @@ public class MessagePost {
   }
 
   /**
-   * Specifies channel-specific overrides to use in order to bypass Smooch's message translation logic.
-   * @return override
+   * Specifies Coordinates used in Location views
+   * @return coordinates
   **/
   @ApiModelProperty(value = "coordinates (latitude and longitude) of a location.")
   public Coordinates getCoordinates() {
