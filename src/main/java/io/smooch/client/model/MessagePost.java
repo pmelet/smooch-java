@@ -16,6 +16,7 @@ package io.smooch.client.model;
 import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.smooch.client.model.Action;
+import io.smooch.client.model.Coordinates;
 import io.smooch.client.model.Destination;
 import io.smooch.client.model.MessageItem;
 import io.smooch.client.model.MessageOverride;
@@ -70,6 +71,9 @@ public class MessagePost {
 
   @SerializedName("override")
   private MessageOverride override = null;
+
+  @SerializedName("coordinates")
+  private Coordinates coordinates = null;
 
   public MessagePost role(String role) {
     this.role = role;
@@ -339,6 +343,18 @@ public class MessagePost {
     this.override = override;
   }
 
+  /**
+   * Specifies channel-specific overrides to use in order to bypass Smooch's message translation logic.
+   * @return override
+  **/
+  @ApiModelProperty(value = "coordinates (latitude and longitude) of a location.")
+  public Coordinates getCoordinates() {
+    return coordinates;
+  }
+
+  public void setCoordinates(Coordinates coordinates) {
+    this.coordinates = coordinates;
+  }
 
   @Override
   public boolean equals(java.lang.Object o) {
