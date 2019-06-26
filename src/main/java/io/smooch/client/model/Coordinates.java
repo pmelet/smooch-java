@@ -64,8 +64,8 @@ public class Coordinates {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Coordinates {\n");
-    sb.append("    latitude: ").append(toIndentedString(latitude)).append("\n");
-    sb.append("    longitude: ").append(toIndentedString(longitude)).append("\n");
+    sb.append("    lat: ").append(toIndentedString(latitude)).append("\n");
+    sb.append("    long: ").append(toIndentedString(longitude)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -1101,6 +1101,7 @@ public class ApiClient {
             }
         } else {
             reqBody = serialize(body, contentType);
+            System.err.println(reqBody.toString());
         }
 
         Request request = null;
