@@ -343,6 +343,11 @@ public class MessagePost {
     this.override = override;
   }
 
+  public MessagePost coordinates(Coordinates coordinates) {
+    this.coordinates = coordinates;
+    return this;
+  }
+
   /**
    * Specifies channel-specific overrides to use in order to bypass Smooch's message translation logic.
    * @return override
@@ -378,12 +383,13 @@ public class MessagePost {
         Objects.equals(this.items, messagePost.items) &&
         Objects.equals(this.actions, messagePost.actions) &&
         Objects.equals(this.destination, messagePost.destination) &&
-        Objects.equals(this.override, messagePost.override);
+        Objects.equals(this.override, messagePost.override) &&
+        Objects.equals(this.coordinates, messagePost.coordinates);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(role, type, name, email, avatarUrl, metadata, payload, text, mediaUrl, mediaType, items, actions, destination, override);
+    return Objects.hash(role, type, name, email, avatarUrl, metadata, payload, text, mediaUrl, mediaType, items, actions, destination, override, coordinates);
   }
 
 
@@ -406,6 +412,7 @@ public class MessagePost {
     sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
     sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
     sb.append("    override: ").append(toIndentedString(override)).append("\n");
+    sb.append("    coordinates: ").append(toIndentedString(coordinates)).append("\n");
     sb.append("}");
     return sb.toString();
   }
