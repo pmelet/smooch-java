@@ -872,6 +872,7 @@ public class ApiClient {
             String content;
             if (obj != null) {
                 content = json.serialize(obj);
+                System.err.println(content);
             } else {
                 content = null;
             }
@@ -1101,7 +1102,6 @@ public class ApiClient {
             }
         } else {
             reqBody = serialize(body, contentType);
-            System.err.println(reqBody.toString());
         }
 
         Request request = null;
