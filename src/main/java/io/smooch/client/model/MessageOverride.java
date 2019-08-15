@@ -16,7 +16,6 @@ package io.smooch.client.model;
 import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.smooch.client.model.MessageOverrideWhatsapp;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
@@ -27,12 +26,20 @@ public class MessageOverride {
   @SerializedName("whatsapp")
   private MessageOverrideWhatsapp whatsapp = null;
 
+  @SerializedName("messenger")
+  private MessageOverrideMessenger messenger = null;
+
   public MessageOverride whatsapp(MessageOverrideWhatsapp whatsapp) {
     this.whatsapp = whatsapp;
     return this;
   }
 
-   /**
+  public MessageOverride messenger(MessageOverrideMessenger messenger) {
+    this.messenger = messenger;
+    return this;
+  }
+
+  /**
    * Get whatsapp
    * @return whatsapp
   **/
@@ -45,6 +52,18 @@ public class MessageOverride {
     this.whatsapp = whatsapp;
   }
 
+  /**
+   * Get messenger
+   * @return messenger
+  **/
+  @ApiModelProperty(value = "")
+  public MessageOverrideMessenger getMessenger() {
+    return messenger;
+  }
+
+  public void setMessenger(MessageOverrideMessenger messenger) {
+    this.messenger = messenger;
+  }
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -55,12 +74,13 @@ public class MessageOverride {
       return false;
     }
     MessageOverride messageOverride = (MessageOverride) o;
-    return Objects.equals(this.whatsapp, messageOverride.whatsapp);
+    return Objects.equals(this.whatsapp, messageOverride.whatsapp) 
+        && Objects.equals(this.messenger, messageOverride.messenger);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(whatsapp);
+    return Objects.hash(whatsapp, messenger);
   }
 
 
@@ -68,8 +88,8 @@ public class MessageOverride {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MessageOverride {\n");
-    
     sb.append("    whatsapp: ").append(toIndentedString(whatsapp)).append("\n");
+    sb.append("    messenger: ").append(toIndentedString(messenger)).append("\n");
     sb.append("}");
     return sb.toString();
   }
